@@ -1,0 +1,9 @@
+{
+  "image": "Screenshot-2024-09-06-014721_png.rf.a5bc64c64b9a8dbf1c956c098fd218ca_mask.png",
+  "image_width": 458,
+  "image_height": 407,
+  "model_used": "C:\\Users\\harsh\\Videos\\AI for bharat\\runs\\rooftop_seg\\weights\\best.pt",
+  "total_rooftops": 0,
+  "total_roof_area_sqm": 0,
+  "rooftops": []
+}

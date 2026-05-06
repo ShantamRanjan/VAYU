@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pandoc \"C:\\\\Users\\\\shant\\\\Downloads\\\\VAYU_Proposal_FINAL_v4.docx\" -o - --to plain)",
+      "Bash(python \"C:\\\\Users\\\\shant\\\\AppData\\\\Roaming\\\\Claude\\\\local-agent-mode-sessions\\\\skills-plugin\\\\5001d2b8-b2ac-46c1-b26e-ec51d2ac7ba1\\\\44c8bd29-bcbf-4258-ba77-938077d58153\\\\skills\\\\docx\\\\scripts\\\\office\\\\unpack.py\" \"C:\\\\Users\\\\shant\\\\Downloads\\\\VAYU_Proposal_FINAL_v4.docx\" \"C:\\\\Users\\\\shant\\\\Downloads\\\\VAYU_unpacked\")",
+      "Bash(python -c ' *)",
+      "Read(//c/Users/shant/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/5001d2b8-b2ac-46c1-b26e-ec51d2ac7ba1/44c8bd29-bcbf-4258-ba77-938077d58153/skills/docx/**)",
+      "Bash(node -e \"require\\('docx'\\)\")",
+      "Bash(npm install *)",
+      "Bash(node create_vayu_doc.js)",
+      "Bash(npm root *)",
+      "Bash(node -e \"require\\('/usr/lib/node_modules/docx'\\)\")",
+      "Bash(python -c \"import ultralytics; print\\(ultralytics.__version__\\)\")",
+      "Bash(python -c \"import groq; print\\('groq ok'\\)\")",
+      "Bash(python -c \"import cv2; print\\('cv2:', cv2.__version__\\)\")",
+      "Bash(python -c \"import numpy; print\\('numpy:', numpy.__version__\\)\")",
+      "Bash(python -c \"import PIL; print\\('PIL ok'\\)\")",
+      "Bash(python -c \"import shapely; print\\('shapely ok'\\)\")",
+      "Bash(python -c \"import matplotlib; print\\('matplotlib:', matplotlib.__version__\\)\")",
+      "Bash(python -c \"import pandas; print\\('pandas:', pandas.__version__\\)\")",
+      "Bash(python -c \"import sklearn; print\\('sklearn ok'\\)\")",
+      "Bash(python -c \"import torch; print\\('torch:', torch.__version__, 'cuda:', torch.cuda.is_available\\(\\)\\)\")",
+      "Bash(pip install *)",
+      "Bash(python -c \"import groq, httpx; print\\('groq:', groq.__version__, '| httpx:', httpx.__version__\\)\")",
+      "Bash(python -c \"import json; nb=json.load\\(open\\(r'C:\\\\Users\\\\shant\\\\OneDrive\\\\Documents\\\\Projects\\\\AI for bharat\\\\vayu_rooftop_solar.ipynb', encoding='utf-8'\\)\\); print\\(len\\(nb['cells']\\), 'cells'\\); [print\\(i, nb['cells'][i]['cell_type'], repr\\(nb['cells'][i].get\\('source',''\\)[:80]\\)\\) for i in range\\(len\\(nb['cells']\\)\\)]\")",
+      "Bash(python patch_notebook.py)",
+      "Bash(python patch2.py)",
+      "Bash(python build_notebook.py)",
+      "Bash(python patch_vis.py)"
+    ]
+  }
+}

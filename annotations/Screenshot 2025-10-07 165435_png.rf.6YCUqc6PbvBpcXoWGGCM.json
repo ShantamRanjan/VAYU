@@ -1,0 +1,174 @@
+{
+  "image": "Screenshot 2025-10-07 165435_png.rf.6YCUqc6PbvBpcXoWGGCM.png",
+  "image_width": 880,
+  "image_height": 514,
+  "model_used": "C:\\Users\\harsh\\Videos\\AI for bharat\\runs\\rooftop_seg\\weights\\best.pt",
+  "total_rooftops": 1,
+  "total_roof_area_sqm": 135.6,
+  "rooftops": [
+    {
+      "id": 1,
+      "polygon_pixels": [
+        [
+          81.12,
+          138.75
+        ],
+        [
+          81.12,
+          142.87
+        ],
+        [
+          79.75,
+          144.25
+        ],
+        [
+          74.25,
+          144.25
+        ],
+        [
+          74.25,
+          445.37
+        ],
+        [
+          739.75,
+          445.37
+        ],
+        [
+          739.75,
+          441.25
+        ],
+        [
+          741.12,
+          439.87
+        ],
+        [
+          767.25,
+          439.87
+        ],
+        [
+          768.62,
+          441.25
+        ],
+        [
+          768.62,
+          445.37
+        ],
+        [
+          782.38,
+          445.37
+        ],
+        [
+          782.38,
+          138.75
+        ]
+      ],
+      "polygon_normalized": [
+        [
+          0.092188,
+          0.269942
+        ],
+        [
+          0.092188,
+          0.277967
+        ],
+        [
+          0.090625,
+          0.280642
+        ],
+        [
+          0.084375,
+          0.280642
+        ],
+        [
+          0.084375,
+          0.866488
+        ],
+        [
+          0.840625,
+          0.866488
+        ],
+        [
+          0.840625,
+          0.858463
+        ],
+        [
+          0.842187,
+          0.855788
+        ],
+        [
+          0.871875,
+          0.855788
+        ],
+        [
+          0.873437,
+          0.858463
+        ],
+        [
+          0.873437,
+          0.866488
+        ],
+        [
+          0.889062,
+          0.866488
+        ],
+        [
+          0.889062,
+          0.269942
+        ]
+      ],
+      "roof_area_sqm": 135.6,
+      "usable_area_sqm": 94.9,
+      "bbox_width_m": 7.7,
+      "bbox_height_m": 17.7,
+      "inclination_deg": 20,
+      "inclination_label": "Moderate slope (~20 deg)",
+      "solar_metrics": {
+        "roof_area_sqm": 135.6,
+        "usable_area_sqm": 94.9,
+        "num_panels": 47,
+        "system_kw": 18.8,
+        "daily_kwh": 82.72,
+        "annual_kwh": 30193,
+        "total_cost_inr": 846000,
+        "annual_savings_inr": 241544,
+        "payback_years": 3.5,
+        "net_profit_25yr_inr": 4815349,
+        "roi_percent": 569.2,
+        "annual_co2_kg": 24758,
+        "trees_equivalent": 1137,
+        "inclination_deg": 20,
+        "inclination_label": "Moderate slope (~20 deg)",
+        "feasibility": "HIGHLY FEASIBLE",
+        "feasibility_color": "green",
+        "feasibility_score": 3
+      },
+      "yearly_savings_inr": [
+        240336,
+        239135,
+        237939,
+        236749,
+        235565,
+        234388,
+        233216,
+        232050,
+        230889,
+        229735,
+        228586,
+        227443,
+        226306,
+        225175,
+        224049,
+        222928,
+        221814,
+        220705,
+        219601,
+        218503,
+        217411,
+        216324,
+        215242,
+        214166,
+        213095
+      ]
+    }
+  ]
+}

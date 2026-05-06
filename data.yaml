@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['roof']
+
+roboflow:
+  workspace: shantam-ranjan
+  project: shantam-ranjan
+  version: dataset
+  license: Private
+  url: https://app.roboflow.com/shantam-ranjan/shantam-ranjan/dataset

@@ -1,0 +1,32 @@
+# Node
+node_modules/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp scripts
+read_nb.py
+check_sizes.py
+
+# Large dataset images (too big for GitHub - download separately)
+dataset/train/images/
+dataset/val/images/
+all/
+
+# Training run artifacts (keep only best.pt, results.csv, and key plots)
+runs/rooftop_seg/weights/epoch*.pt
+runs/rooftop_seg/weights/last.pt
+runs/rooftop_seg/train_batch*.jpg
+runs/segment/
+yolov8m-seg.pt

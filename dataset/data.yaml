@@ -1,0 +1,6 @@
+path: C:/Users/harsh/Videos/AI for bharat/dataset
+train: train/images
+val: val/images
+
+nc: 1
+names: ['roof']
