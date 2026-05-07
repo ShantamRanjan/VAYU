@@ -1,0 +1,22 @@
+# Exclude everything except backend code
+solar-wind-energy-prediction/
+all_labels/
+annotations/
+dataset/
+vayu_layer3/
+all/
+images/
+*.ipynb
+*.png
+*.jpg
+*.jpeg
+*.csv
+*.yaml
+*.pt
+training_metrics.png
+batch_solar_analysis.csv
+README.md
+README.roboflow.txt
+start_vayu.bat
+start_vayu.ps1
+fix_cell11.py

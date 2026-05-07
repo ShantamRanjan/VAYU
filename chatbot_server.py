@@ -3,6 +3,12 @@ import math
 from concurrent.futures import ThreadPoolExecutor
 from groq import Groq
 from flask import Flask, request, jsonify
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 from flask_cors import CORS
 
 app = Flask(__name__)

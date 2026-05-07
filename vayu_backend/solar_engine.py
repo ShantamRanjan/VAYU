@@ -39,6 +39,14 @@ def _try_import_heavy():
     if _HAS_HEAVY_DEPS is False:
         raise RuntimeError(_HEAVY_DEPS_ERR)
     try:
+        import torch
+        # PyTorch 2.6 changed weights_only default to True which breaks YOLO .pt loading
+        _orig_torch_load = torch.load
+        def _patched_torch_load(*args, **kwargs):
+            kwargs.setdefault("weights_only", False)
+            return _orig_torch_load(*args, **kwargs)
+        torch.load = _patched_torch_load
+
         import cv2
         from shapely.geometry import Polygon
         from ultralytics import YOLO
