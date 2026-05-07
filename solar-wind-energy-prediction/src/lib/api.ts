@@ -2,9 +2,7 @@
 // Configure via VITE_VAYU_API in solar-wind-energy-prediction/.env, falls back
 // to http://localhost:5000 (Flask default).
 
-const ENV_BASE = (import.meta as unknown as { env?: { VITE_VAYU_API?: string } })
-  ?.env?.VITE_VAYU_API;
-export const API_BASE: string = ENV_BASE || "http://localhost:5000";
+export const API_BASE: string = import.meta.env.VITE_VAYU_API || "http://localhost:5000";
 
 async function jsonOrThrow<T>(res: Response): Promise<T> {
   if (!res.ok) {

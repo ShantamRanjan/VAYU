@@ -76,7 +76,7 @@ export function Chatbot() {
     setLoading(true);
 
     try {
-      const CHATBOT_URL = (import.meta as { env?: { VITE_CHATBOT_URL?: string } }).env?.VITE_CHATBOT_URL || "http://localhost:5001";
+      const CHATBOT_URL = import.meta.env.VITE_CHATBOT_URL || "http://localhost:5001";
       const res = await fetch(`${CHATBOT_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
