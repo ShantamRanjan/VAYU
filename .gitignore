@@ -24,9 +24,9 @@ dataset/train/images/
 dataset/val/images/
 all/
 
-# Training run artifacts (keep only best.pt, results.csv, and key plots)
-runs/rooftop_seg/weights/epoch*.pt
-runs/rooftop_seg/weights/last.pt
+# Model weights — too large for git, download separately
+*.pt
+runs/
 runs/rooftop_seg/train_batch*.jpg
 runs/segment/
 yolov8m-seg.pt

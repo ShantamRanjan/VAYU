@@ -26,7 +26,10 @@
       "Bash(python patch_notebook.py)",
       "Bash(python patch2.py)",
       "Bash(python build_notebook.py)",
-      "Bash(python patch_vis.py)"
+      "Bash(python patch_vis.py)",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git fetch *)"
     ]
   }
 }
