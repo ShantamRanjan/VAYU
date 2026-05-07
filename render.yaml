@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: vayu-backend
+    env: python
+    rootDir: vayu_backend
+    buildCommand: pip install -r requirements_render.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --timeout 120
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: FLASK_ENV
+        value: production
+
+  - type: web
+    name: vayu-chatbot
+    env: python
+    buildCommand: pip install -r chatbot_requirements.txt
+    startCommand: gunicorn chatbot_server:app --bind 0.0.0.0:$PORT --timeout 60
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
