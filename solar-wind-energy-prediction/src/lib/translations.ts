@@ -1,8 +1,15 @@
 export const translations = {
   en: {
+    // ── Navbar ──────────────────────────────────────────────────────
     "nav.solarAnalysis": "Solar Analysis",
     "nav.windMonitor": "Wind Monitor",
     "nav.updatedAgo": "Updated 3 mins ago",
+    "nav.notifications": "Notifications",
+    "nav.noNotifications": "No new notifications",
+    "nav.alertWarning": "Warning: Wind speed at {{location}} has reached {{speed}} m/s.",
+    "nav.alertCritical": "Critical: Wind speed at {{location}} has reached {{speed}} m/s! Action required.",
+
+    // ── Sidebar ─────────────────────────────────────────────────────
     "sidebar.solarAnalysis": "Solar Analysis",
     "sidebar.windMonitor": "Wind Monitor",
     "sidebar.upload": "Upload",
@@ -12,6 +19,91 @@ export const translations = {
     "sidebar.callLog": "Call Log",
     "sidebar.forecast": "Forecast",
     "sidebar.accuracy": "Accuracy",
+
+    // ── Home ────────────────────────────────────────────────────────
+    "home.badge": "Intelligent Energy Monitoring",
+    "home.title": "VAYU Energy Platform",
+    "home.subtitle": "AI-powered solar rooftop analysis and real-time wind risk monitoring for Karnataka's renewable energy infrastructure.",
+    "home.solarTitle": "Solar Rooftop Analyzer",
+    "home.solarDesc": "Upload satellite imagery to analyze rooftop solar potential. Get panel layouts, energy estimates, and financial projections.",
+    "home.solarBtn": "Get Started",
+    "home.windTitle": "Wind Risk Monitor",
+    "home.windDesc": "Real-time wind speed monitoring across Karnataka with automated alerts, call escalation, and forecasting.",
+    "home.windBtn": "View Dashboard",
+
+    // ── Solar Upload ─────────────────────────────────────────────────
+    "upload.badge": "Solar Rooftop Analyzer",
+    "upload.title": "Analyze Your Rooftop Solar Potential",
+    "upload.subtitle": "Upload a satellite image of your rooftop and our AI will calculate optimal panel placement, energy generation, and financial returns.",
+    "upload.dragDrop": "Drag & drop your rooftop image",
+    "upload.formats": "JPG, PNG — Satellite or aerial imagery",
+    "upload.sample": "Sample satellite image",
+    "upload.sampleHint": "Use Google Earth or similar for best results",
+    "upload.analyzing": "Analyzing...",
+    "upload.analyzeBtn": "Analyze Roof",
+    "upload.backendError": "Backend unavailable",
+
+    // ── Solar Results ────────────────────────────────────────────────
+    "results.title": "Analysis Results",
+    "results.hideOverlay": "Hide Overlay",
+    "results.showOverlay": "Show Overlay",
+    "results.roofAnalysis": "Roof Analysis",
+    "results.usable": "Usable",
+    "results.obstacle": "Obstacle",
+    "results.usableArea": "Usable Roof Area",
+    "results.panelCount": "Number of Panels",
+    "results.systemCapacity": "System Capacity",
+    "results.dailyGen": "Daily Generation",
+    "results.annualGen": "Annual Generation",
+    "results.totalInvestment": "Total Investment",
+    "results.investmentDesc": "One-time cost to install your solar system",
+    "results.yearlySavings": "Yearly Savings",
+    "results.savingsDesc": "Saved on electricity bills every year",
+    "results.breakEven": "Break-Even In",
+    "results.years": "years",
+    "results.breakEvenDesc": "System pays for itself by {{year}}",
+    "results.profit25": "25-Year Profit",
+    "results.profitDesc": "Net earnings after recovering all costs",
+    "results.cumulativeSavings": "Cumulative Savings (25 Years)",
+    "results.cumulativeTip": "Cumulative savings",
+    "results.costBreakdown": "Cost Breakdown",
+    "results.co2Avoided": "CO₂ Avoided per Year",
+    "results.treesEquivalent": "Equivalent Trees Planted",
+    "results.downloadReport": "Download Report",
+
+    // ── Wind Alerts ──────────────────────────────────────────────────
+    "alerts.title": "Alert Log",
+    "alerts.filterAll": "All",
+    "alerts.time": "Time",
+    "alerts.location": "Location",
+    "alerts.speed": "Speed",
+    "alerts.riskLevel": "Risk Level",
+    "alerts.actionTaken": "Action Taken",
+    "alerts.delivery": "Delivery",
+    "alerts.transcript": "Transcript:",
+    "alerts.delivered": "Delivered",
+    "alerts.escalated": "Escalated",
+
+    // ── Wind Forecast ────────────────────────────────────────────────
+    "forecast.title": "24-Hour Wind Forecast",
+    "forecast.risk6h": "PREDICTED RISK IN 6 HOURS",
+    "forecast.exceeds": "Wind speed forecast exceeds safety threshold for {{location}}",
+    "forecast.thresholds": "Thresholds",
+
+    // ── Wind Accuracy ────────────────────────────────────────────────
+    "accuracy.title": "Forecast Accuracy Tracker",
+    "accuracy.driftTitle": "Model drift detected — retraining recommended",
+    "accuracy.driftAlerts": "({{count}} alert(s))",
+    "accuracy.retrainDesc": "Backend flagged model for immediate retraining",
+    "accuracy.driftEventsDesc": "{{count}} drift event(s) detected in recent history",
+    "accuracy.mapeLabel": "Mean Absolute Percentage Error (MAPE)",
+    "accuracy.mapeYesterday": "Yesterday's forecast accuracy",
+    "accuracy.predictedVsActual": "Predicted MW vs Actual MW (Yesterday)",
+    "accuracy.predicted": "Predicted",
+    "accuracy.actual": "Actual",
+    "accuracy.mape30Day": "30-Day MAPE Trend",
+
+    // ── Wind Map ─────────────────────────────────────────────────────
     "map.title": "Karnataka Wind Monitoring Map (Live)",
     "map.fetching": "Fetching real-time wind data from OpenWeatherMap...",
     "map.failed": "Failed to load weather data.",
@@ -21,18 +113,24 @@ export const translations = {
     "map.risk": "Risk",
     "map.riskScore": "Risk Score",
     "map.updated": "Updated",
+
+    // ── Risk levels ──────────────────────────────────────────────────
     "risk.Critical": "Critical",
     "risk.Warning": "Warning",
     "risk.Normal": "Normal",
-    "nav.notifications": "Notifications",
-    "nav.noNotifications": "No new notifications",
-    "nav.alertWarning": "Warning: Wind speed at {{location}} has reached {{speed}} m/s.",
-    "nav.alertCritical": "Critical: Wind speed at {{location}} has reached {{speed}} m/s! Action required."
   },
+
   kn: {
+    // ── Navbar ──────────────────────────────────────────────────────
     "nav.solarAnalysis": "ಸೌರ ವಿಶ್ಲೇಷಣೆ",
     "nav.windMonitor": "ಗಾಳಿ ಮೇಲ್ವಿಚಾರಕ",
     "nav.updatedAgo": "3 ನಿಮಿಷಗಳ ಹಿಂದೆ ನವೀಕರಿಸಲಾಗಿದೆ",
+    "nav.notifications": "ಸೂಚನೆಗಳು",
+    "nav.noNotifications": "ಯಾವುದೇ ಹೊಸ ಸೂಚನೆಗಳಿಲ್ಲ",
+    "nav.alertWarning": "ಎಚ್ಚರಿಕೆ: {{location}} ದಲ್ಲಿ ಗಾಳಿಯ ವೇಗ {{speed}} m/s ತಲುಪಿದೆ.",
+    "nav.alertCritical": "ನಿರ್ಣಾಯಕ: {{location}} ದಲ್ಲಿ ಗಾಳಿಯ ವೇಗ {{speed}} m/s ತಲುಪಿದೆ! ದಯವಿಟ್ಟು ಗಮನಿಸಿ.",
+
+    // ── Sidebar ─────────────────────────────────────────────────────
     "sidebar.solarAnalysis": "ಸೌರ ವಿಶ್ಲೇಷಣೆ",
     "sidebar.windMonitor": "ಗಾಳಿ ಮೇಲ್ವಿಚಾರಕ",
     "sidebar.upload": "ಅಪ್‌ಲೋಡ್",
@@ -42,6 +140,91 @@ export const translations = {
     "sidebar.callLog": "ಕರೆ ಲಾಗ್",
     "sidebar.forecast": "ಮುನ್ಸೂಚನೆ",
     "sidebar.accuracy": "ನಿಖರತೆ",
+
+    // ── Home ────────────────────────────────────────────────────────
+    "home.badge": "ಬುದ್ಧಿವಂತ ಇಂಧನ ಮೇಲ್ವಿಚಾರಣೆ",
+    "home.title": "VAYU ಇಂಧನ ವೇದಿಕೆ",
+    "home.subtitle": "ಕರ್ನಾಟಕದ ನವೀಕರಿಸಬಹುದಾದ ಇಂಧನ ಮೂಲಸೌಕರ್ಯಕ್ಕಾಗಿ AI-ಚಾಲಿತ ಸೌರ ಛಾವಣಿ ವಿಶ್ಲೇಷಣೆ ಮತ್ತು ನೈಜ-ಸಮಯ ಗಾಳಿ ಅಪಾಯ ಮೇಲ್ವಿಚಾರಣೆ.",
+    "home.solarTitle": "ಸೌರ ಛಾವಣಿ ವಿಶ್ಲೇಷಕ",
+    "home.solarDesc": "ಛಾವಣಿ ಸೌರ ಸಾಮರ್ಥ್ಯ ವಿಶ್ಲೇಷಿಸಲು ಉಪಗ್ರಹ ಚಿತ್ರ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ. ಫಲಕ ವಿನ್ಯಾಸ, ಇಂಧನ ಅಂದಾಜು ಮತ್ತು ಹಣಕಾಸು ಮಾಹಿತಿ ಪಡೆಯಿರಿ.",
+    "home.solarBtn": "ಪ್ರಾರಂಭಿಸಿ",
+    "home.windTitle": "ಗಾಳಿ ಅಪಾಯ ಮೇಲ್ವಿಚಾರಕ",
+    "home.windDesc": "ಸ್ವಯಂಚಾಲಿತ ಎಚ್ಚರಿಕೆಗಳು ಮತ್ತು ಮುನ್ಸೂಚನೆಯೊಂದಿಗೆ ಕರ್ನಾಟಕದಾದ್ಯಂತ ನೈಜ-ಸಮಯ ಗಾಳಿ ವೇಗ ಮೇಲ್ವಿಚಾರಣೆ.",
+    "home.windBtn": "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್ ನೋಡಿ",
+
+    // ── Solar Upload ─────────────────────────────────────────────────
+    "upload.badge": "ಸೌರ ಛಾವಣಿ ವಿಶ್ಲೇಷಕ",
+    "upload.title": "ನಿಮ್ಮ ಛಾವಣಿಯ ಸೌರ ಸಾಮರ್ಥ್ಯ ವಿಶ್ಲೇಷಿಸಿ",
+    "upload.subtitle": "ನಿಮ್ಮ ಛಾವಣಿಯ ಉಪಗ್ರಹ ಚಿತ್ರ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ. ನಮ್ಮ AI ಸೌರ ಫಲಕ ಜೋಡಣೆ, ಇಂಧನ ಉತ್ಪಾದನೆ ಮತ್ತು ಆರ್ಥಿಕ ಲಾಭ ಲೆಕ್ಕ ಹಾಕುತ್ತದೆ.",
+    "upload.dragDrop": "ನಿಮ್ಮ ಛಾವಣಿ ಚಿತ್ರ ಇಲ್ಲಿ ಎಳೆದು ಬಿಡಿ",
+    "upload.formats": "JPG, PNG — ಉಪಗ್ರಹ ಅಥವಾ ವಾಯು ಚಿತ್ರ",
+    "upload.sample": "ಮಾದರಿ ಉಪಗ್ರಹ ಚಿತ್ರ",
+    "upload.sampleHint": "ಉತ್ತಮ ಫಲಿತಾಂಶಕ್ಕಾಗಿ Google Earth ಬಳಸಿ",
+    "upload.analyzing": "ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತಿದೆ...",
+    "upload.analyzeBtn": "ಛಾವಣಿ ವಿಶ್ಲೇಷಿಸಿ",
+    "upload.backendError": "ಬ್ಯಾಕೆಂಡ್ ಲಭ್ಯವಿಲ್ಲ",
+
+    // ── Solar Results ────────────────────────────────────────────────
+    "results.title": "ವಿಶ್ಲೇಷಣೆ ಫಲಿತಾಂಶಗಳು",
+    "results.hideOverlay": "ಓವರ್‌ಲೇ ಮರೆಮಾಡಿ",
+    "results.showOverlay": "ಓವರ್‌ಲೇ ತೋರಿಸಿ",
+    "results.roofAnalysis": "ಛಾವಣಿ ವಿಶ್ಲೇಷಣೆ",
+    "results.usable": "ಬಳಕೆಯೋಗ್ಯ",
+    "results.obstacle": "ಅಡೆತಡೆ",
+    "results.usableArea": "ಬಳಕೆಯೋಗ್ಯ ಛಾವಣಿ ವಿಸ್ತೀರ್ಣ",
+    "results.panelCount": "ಫಲಕಗಳ ಸಂಖ್ಯೆ",
+    "results.systemCapacity": "ಸಿಸ್ಟಮ್ ಸಾಮರ್ಥ್ಯ",
+    "results.dailyGen": "ದೈನಂದಿನ ಉತ್ಪಾದನೆ",
+    "results.annualGen": "ವಾರ್ಷಿಕ ಉತ್ಪಾದನೆ",
+    "results.totalInvestment": "ಒಟ್ಟು ಹೂಡಿಕೆ",
+    "results.investmentDesc": "ಸೌರ ವ್ಯವಸ್ಥೆ ಅಳವಡಿಸಲು ಒಮ್ಮೆ ಮಾಡುವ ವೆಚ್ಚ",
+    "results.yearlySavings": "ವಾರ್ಷಿಕ ಉಳಿತಾಯ",
+    "results.savingsDesc": "ಪ್ರತಿ ವರ್ಷ ವಿದ್ಯುತ್ ಬಿಲ್‌ನಲ್ಲಿ ಉಳಿಕೆ",
+    "results.breakEven": "ವಾಪಸಾತಿ ಅವಧಿ",
+    "results.years": "ವರ್ಷಗಳು",
+    "results.breakEvenDesc": "{{year}} ರ ವೇಳೆಗೆ ವ್ಯವಸ್ಥೆ ತನ್ನ ವೆಚ್ಚ ಮರಳಿಸುತ್ತದೆ",
+    "results.profit25": "25 ವರ್ಷ ಲಾಭ",
+    "results.profitDesc": "ಎಲ್ಲಾ ವೆಚ್ಚ ಮರಳಿಸಿದ ನಂತರ ನಿವ್ವಳ ಗಳಿಕೆ",
+    "results.cumulativeSavings": "ಸಂಚಿತ ಉಳಿತಾಯ (25 ವರ್ಷ)",
+    "results.cumulativeTip": "ಸಂಚಿತ ಉಳಿತಾಯ",
+    "results.costBreakdown": "ವೆಚ್ಚ ವಿಭಜನೆ",
+    "results.co2Avoided": "ವಾರ್ಷಿಕ CO₂ ತಪ್ಪಿಸಲಾಗಿದೆ",
+    "results.treesEquivalent": "ಸಮಾನ ಮರಗಳ ಸಂಖ್ಯೆ",
+    "results.downloadReport": "ವರದಿ ಡೌನ್‌ಲೋಡ್",
+
+    // ── Wind Alerts ──────────────────────────────────────────────────
+    "alerts.title": "ಎಚ್ಚರಿಕೆ ದಾಖಲೆ",
+    "alerts.filterAll": "ಎಲ್ಲಾ",
+    "alerts.time": "ಸಮಯ",
+    "alerts.location": "ಸ್ಥಳ",
+    "alerts.speed": "ವೇಗ",
+    "alerts.riskLevel": "ಅಪಾಯ ಮಟ್ಟ",
+    "alerts.actionTaken": "ತೆಗೆದ ಕ್ರಮ",
+    "alerts.delivery": "ವಿತರಣೆ",
+    "alerts.transcript": "ಪ್ರತಿಲಿಪಿ:",
+    "alerts.delivered": "ತಲುಪಿಸಲಾಗಿದೆ",
+    "alerts.escalated": "ಏರಿಸಲಾಗಿದೆ",
+
+    // ── Wind Forecast ────────────────────────────────────────────────
+    "forecast.title": "24-ಗಂಟೆ ಗಾಳಿ ಮುನ್ಸೂಚನೆ",
+    "forecast.risk6h": "6 ಗಂಟೆಗಳಲ್ಲಿ ನಿರೀಕ್ಷಿತ ಅಪಾಯ",
+    "forecast.exceeds": "{{location}} ಗಾಗಿ ಗಾಳಿ ವೇಗ ಮುನ್ಸೂಚನೆ ಸುರಕ್ಷತಾ ಮಿತಿ ಮೀರಿದೆ",
+    "forecast.thresholds": "ಮಿತಿಗಳು",
+
+    // ── Wind Accuracy ────────────────────────────────────────────────
+    "accuracy.title": "ಮುನ್ಸೂಚನೆ ನಿಖರತೆ ಟ್ರ್ಯಾಕರ್",
+    "accuracy.driftTitle": "ಮಾದರಿ ಡ್ರಿಫ್ಟ್ ಪತ್ತೆಯಾಗಿದೆ — ಮರು-ತರಬೇತಿ ಶಿಫಾರಸು",
+    "accuracy.driftAlerts": "({{count}} ಎಚ್ಚರಿಕೆ)",
+    "accuracy.retrainDesc": "ಬ್ಯಾಕೆಂಡ್ ತಕ್ಷಣ ಮರು-ತರಬೇತಿಗಾಗಿ ಮಾದರಿ ಗುರುತಿಸಿದೆ",
+    "accuracy.driftEventsDesc": "ಇತ್ತೀಚಿನ ಇತಿಹಾಸದಲ್ಲಿ {{count}} ಡ್ರಿಫ್ಟ್ ಘಟನೆ ಪತ್ತೆಯಾಗಿದೆ",
+    "accuracy.mapeLabel": "ಸರಾಸರಿ ಸಂಪೂರ್ಣ ಶೇಕಡಾ ದೋಷ (MAPE)",
+    "accuracy.mapeYesterday": "ನಿನ್ನೆಯ ಮುನ್ಸೂಚನೆ ನಿಖರತೆ",
+    "accuracy.predictedVsActual": "ಊಹಿಸಿದ MW ಮತ್ತು ನಿಜವಾದ MW (ನಿನ್ನೆ)",
+    "accuracy.predicted": "ಊಹಿಸಿದ",
+    "accuracy.actual": "ನಿಜವಾದ",
+    "accuracy.mape30Day": "30-ದಿನ MAPE ಪ್ರವೃತ್ತಿ",
+
+    // ── Wind Map ─────────────────────────────────────────────────────
     "map.title": "ಕರ್ನಾಟಕ ಗಾಳಿ ಮೇಲ್ವಿಚಾರಣೆ ನಕ್ಷೆ (ಲೈವ್)",
     "map.fetching": "OpenWeatherMap ನಿಂದ ನೈಜ-ಸಮಯದ ಗಾಳಿ ಡೇಟಾವನ್ನು ಪಡೆಯಲಾಗುತ್ತಿದೆ...",
     "map.failed": "ಹವಾಮಾನ ಡೇಟಾವನ್ನು ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ.",
@@ -51,14 +234,12 @@ export const translations = {
     "map.risk": "ಅಪಾಯ",
     "map.riskScore": "ಅಪಾಯದ ಅಂಕ",
     "map.updated": "ನವೀಕರಿಸಲಾಗಿದೆ",
+
+    // ── Risk levels ──────────────────────────────────────────────────
     "risk.Critical": "ನಿರ್ಣಾಯಕ",
     "risk.Warning": "ಎಚ್ಚರಿಕೆ",
     "risk.Normal": "ಸಾಮಾನ್ಯ",
-    "nav.notifications": "ಸೂಚನೆಗಳು",
-    "nav.noNotifications": "ಯಾವುದೇ ಹೊಸ ಸೂಚನೆಗಳಿಲ್ಲ",
-    "nav.alertWarning": "ಎಚ್ಚರಿಕೆ: {{location}} ದಲ್ಲಿ ಗಾಳಿಯ ವೇಗ {{speed}} m/s ತಲುಪಿದೆ.",
-    "nav.alertCritical": "ನಿರ್ಣಾಯಕ: {{location}} ದಲ್ಲಿ ಗಾಳಿಯ ವೇಗ {{speed}} m/s ತಲುಪಿದೆ! ದಯವಿಟ್ಟು ಗಮನಿಸಿ."
-  }
+  },
 };
 
 export type TranslationKey = keyof typeof translations.en;

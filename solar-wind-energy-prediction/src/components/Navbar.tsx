@@ -2,16 +2,18 @@ import { Wind, Sun, Moon, Bell, Globe, AlertTriangle } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useAppContext } from "@/context/AppContext";
 import { useTranslation } from "@/hooks/useTranslation";
-import { useWindData } from "@/hooks/useWindData";
+import { useWindAlertsApi } from "@/hooks/useVayuApi";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 export function Navbar() {
   const { theme, toggleTheme, language, toggleLanguage } = useAppContext();
   const { t } = useTranslation();
-  const { locations } = useWindData();
+  const { data: alertsData } = useWindAlertsApi();
 
-  // Find locations with Warning or Critical risk levels
-  const activeAlerts = locations.filter(loc => loc.riskLevel === "Warning" || loc.riskLevel === "Critical");
+  // Show Critical and Warning alerts from backend
+  const activeAlerts = (alertsData?.alerts ?? []).filter(
+    (a) => a.riskLevel === "Warning" || a.riskLevel === "Critical"
+  );
   const notifCount = activeAlerts.length;
 
   return (
@@ -89,11 +91,11 @@ export function Navbar() {
                   <div className={`mt-0.5 w-2 h-2 rounded-full shrink-0 ${alert.riskLevel === 'Critical' ? 'bg-status-red pulse-red' : 'bg-status-orange'}`} />
                   <div>
                     <p className="text-sm font-medium">
-                      {alert.riskLevel === "Critical" 
-                        ? t("nav.alertCritical", { location: alert.name, speed: alert.windSpeed.toFixed(1) })
-                        : t("nav.alertWarning", { location: alert.name, speed: alert.windSpeed.toFixed(1) })}
+                      {alert.riskLevel === "Critical"
+                        ? t("nav.alertCritical", { location: alert.location, speed: String(alert.speed.toFixed(1)) })
+                        : t("nav.alertWarning", { location: alert.location, speed: String(alert.speed.toFixed(1)) })}
                     </p>
-                    <p className="text-xs text-muted-foreground mt-1">{alert.lastUpdated.toLocaleTimeString()}</p>
+                    <p className="text-xs text-muted-foreground mt-1">{alert.time} · {alert.date}</p>
                   </div>
                 </div>
               ))

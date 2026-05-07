@@ -10,7 +10,6 @@ import SolarUpload from "@/pages/SolarUpload";
 import SolarResults from "@/pages/SolarResults";
 import WindMap from "@/pages/WindMap";
 import WindAlerts from "@/pages/WindAlerts";
-import WindCalls from "@/pages/WindCalls";
 import WindForecast from "@/pages/WindForecast";
 import WindAccuracy from "@/pages/WindAccuracy";
 import NotFound from "@/pages/NotFound";
@@ -33,7 +32,6 @@ const App = () => (
               <Route path="/wind" element={<Navigate to="/wind/map" replace />} />
               <Route path="/wind/map" element={<WindMap />} />
               <Route path="/wind/alerts" element={<WindAlerts />} />
-              <Route path="/wind/calls" element={<WindCalls />} />
               <Route path="/wind/forecast" element={<WindForecast />} />
               <Route path="/wind/accuracy" element={<WindAccuracy />} />
             </Route>

@@ -30,3 +30,12 @@ runs/rooftop_seg/weights/last.pt
 runs/rooftop_seg/train_batch*.jpg
 runs/segment/
 yolov8m-seg.pt
+
+# Runtime artifacts
+vayu_backend/uploads/
+vayu_backend/outputs/
+vayu_backend/__pycache__/
+vayu_backend/agents/__pycache__/
+vayu_layer3/__pycache__/
+__MACOSX/
+.claude/

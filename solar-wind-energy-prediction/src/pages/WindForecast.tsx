@@ -1,17 +1,29 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine } from "recharts";
-import { forecastData, windLocations } from "@/data/mockData";
+import { forecastData as mockForecastData, windLocations } from "@/data/mockData";
 import { AlertTriangle } from "lucide-react";
+import { useWindForecastApi } from "@/hooks/useVayuApi";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function WindForecast() {
   const [selectedLocation, setSelectedLocation] = useState(windLocations[0].name);
+  const { data: api } = useWindForecastApi();
+  const { t } = useTranslation();
+
+  const forecastData = useMemo(() => {
+    if (api?.forecasts) {
+      const series = api.forecasts[selectedLocation] ?? Object.values(api.forecasts)[0];
+      if (series && series.length) return series;
+    }
+    return mockForecastData;
+  }, [api, selectedLocation]);
 
   const hasCrossing = forecastData.some((d) => d.p50 > 25 || d.p90 > 30);
 
   return (
     <div className="space-y-6 animate-fade-in-up">
       <div className="flex items-center justify-between flex-wrap gap-3">
-        <h1 className="text-2xl font-bold text-foreground">24-Hour Wind Forecast</h1>
+        <h1 className="text-2xl font-bold text-foreground">{t("forecast.title")}</h1>
         <div className="flex gap-2">
           {windLocations.map((loc) => (
             <button
@@ -33,8 +45,10 @@ export default function WindForecast() {
         <div className="flex items-center gap-3 p-4 rounded-xl bg-status-red-soft border border-status-red/20">
           <AlertTriangle className="w-5 h-5 text-status-red shrink-0" />
           <div>
-            <p className="text-sm font-semibold status-red">PREDICTED RISK IN 6 HOURS</p>
-            <p className="text-xs text-muted-foreground">Wind speed forecast exceeds safety threshold for {selectedLocation}</p>
+            <p className="text-sm font-semibold status-red">{t("forecast.risk6h")}</p>
+            <p className="text-xs text-muted-foreground">
+              {t("forecast.exceeds", { location: selectedLocation })}
+            </p>
           </div>
         </div>
       )}
@@ -44,7 +58,7 @@ export default function WindForecast() {
           <span className="flex items-center gap-1"><span className="w-3 h-0.5 bg-status-green rounded" /> P10</span>
           <span className="flex items-center gap-1"><span className="w-3 h-0.5 bg-primary rounded" /> P50</span>
           <span className="flex items-center gap-1"><span className="w-3 h-0.5 bg-status-orange rounded" /> P90</span>
-          <span className="flex items-center gap-1"><span className="w-3 h-0.5 bg-status-red rounded border-dashed" /> Thresholds</span>
+          <span className="flex items-center gap-1"><span className="w-3 h-0.5 bg-status-red rounded border-dashed" /> {t("forecast.thresholds")}</span>
         </div>
         <div className="h-80">
           <ResponsiveContainer width="100%" height="100%">

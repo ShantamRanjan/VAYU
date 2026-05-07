@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { Upload, BarChart3, Map, AlertTriangle, Phone, TrendingUp, Target, ChevronLeft, ChevronRight } from "lucide-react";
+import { Upload, BarChart3, Map, AlertTriangle, TrendingUp, Target, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { TranslationKey } from "@/lib/translations";
@@ -18,7 +18,6 @@ const solarLinks: SidebarLink[] = [
 const windLinks: SidebarLink[] = [
   { to: "/wind/map", labelKey: "sidebar.liveMap", icon: Map },
   { to: "/wind/alerts", labelKey: "sidebar.alertLog", icon: AlertTriangle },
-  { to: "/wind/calls", labelKey: "sidebar.callLog", icon: Phone },
   { to: "/wind/forecast", labelKey: "sidebar.forecast", icon: TrendingUp },
   { to: "/wind/accuracy", labelKey: "sidebar.accuracy", icon: Target },
 ];

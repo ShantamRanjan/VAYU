@@ -2,6 +2,9 @@ import { useState, useCallback } from "react";
 import { Upload, Image, Loader2, Sun } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { analyzeSolar } from "@/lib/api";
+import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "@/hooks/useTranslation";
 
 export default function SolarUpload() {
   const [file, setFile] = useState<File | null>(null);
@@ -9,6 +12,8 @@ export default function SolarUpload() {
   const [loading, setLoading] = useState(false);
   const [dragOver, setDragOver] = useState(false);
   const navigate = useNavigate();
+  const { toast } = useToast();
+  const { t } = useTranslation();
 
   const handleFile = useCallback((f: File) => {
     setFile(f);
@@ -24,11 +29,24 @@ export default function SolarUpload() {
     if (f && (f.type === "image/jpeg" || f.type === "image/png")) handleFile(f);
   }, [handleFile]);
 
-  const handleAnalyze = () => {
+  const handleAnalyze = async () => {
+    if (!file) return;
     setLoading(true);
-    setTimeout(() => {
+    try {
+      const result = await analyzeSolar(file);
+      const payload = { ...result, preview };
+      sessionStorage.setItem("vayu:lastSolarResult", JSON.stringify(payload));
+    } catch (err) {
+      sessionStorage.removeItem("vayu:lastSolarResult");
+      toast({
+        title: t("upload.backendError"),
+        description: (err as Error).message + " — showing demo metrics instead.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
       navigate("/solar/results");
-    }, 2000);
+    }
   };
 
   return (
@@ -37,12 +55,10 @@ export default function SolarUpload() {
       <div className="text-center space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-status-orange/10 text-status-orange text-xs font-medium">
           <Sun className="w-3.5 h-3.5" />
-          Solar Rooftop Analyzer
+          {t("upload.badge")}
         </div>
-        <h1 className="text-3xl font-bold text-foreground">Analyze Your Rooftop Solar Potential</h1>
-        <p className="text-muted-foreground max-w-lg mx-auto">
-          Upload a satellite image of your rooftop and our AI will calculate optimal panel placement, energy generation, and financial returns.
-        </p>
+        <h1 className="text-3xl font-bold text-foreground">{t("upload.title")}</h1>
+        <p className="text-muted-foreground max-w-lg mx-auto">{t("upload.subtitle")}</p>
       </div>
 
       {/* Upload + Sample */}
@@ -65,14 +81,14 @@ export default function SolarUpload() {
             onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
           />
           {preview ? (
-            <img src={preview} alt="Uploaded rooftop" className="max-h-52 rounded-xl object-cover" />
+            <img src={preview} alt={t("upload.badge")} className="max-h-52 rounded-xl object-cover" />
           ) : (
             <>
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
                 <Upload className="w-8 h-8 text-primary" />
               </div>
-              <p className="text-sm font-medium text-foreground mb-1">Drag & drop your rooftop image</p>
-              <p className="text-xs text-muted-foreground">JPG, PNG — Satellite or aerial imagery</p>
+              <p className="text-sm font-medium text-foreground mb-1">{t("upload.dragDrop")}</p>
+              <p className="text-xs text-muted-foreground">{t("upload.formats")}</p>
             </>
           )}
           {file && <p className="mt-3 text-xs text-muted-foreground">{file.name}</p>}
@@ -83,26 +99,21 @@ export default function SolarUpload() {
           <div className="w-full h-48 rounded-xl bg-secondary/50 flex items-center justify-center mb-4">
             <Image className="w-12 h-12 text-muted-foreground/40" />
           </div>
-          <p className="text-xs font-medium text-muted-foreground">Sample satellite image</p>
-          <p className="text-xs text-muted-foreground mt-1">Use Google Earth or similar for best results</p>
+          <p className="text-xs font-medium text-muted-foreground">{t("upload.sample")}</p>
+          <p className="text-xs text-muted-foreground mt-1">{t("upload.sampleHint")}</p>
         </div>
       </div>
 
       {/* Analyze button */}
       <div className="text-center">
-        <Button
-          size="lg"
-          disabled={!file || loading}
-          onClick={handleAnalyze}
-          className="px-8"
-        >
+        <Button size="lg" disabled={!file || loading} onClick={handleAnalyze} className="px-8">
           {loading ? (
             <>
               <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-              Analyzing...
+              {t("upload.analyzing")}
             </>
           ) : (
-            "Analyze Roof"
+            t("upload.analyzeBtn")
           )}
         </Button>
       </div>
