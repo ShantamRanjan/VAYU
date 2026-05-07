@@ -8,7 +8,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-GROQ_API_KEY = "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"
+GROQ_API_KEY = ""
 MODEL = "llama-3.1-8b-instant"   # Groq's fastest — ~250 tokens/s
 DEBATE_ROUNDS = 1
 
