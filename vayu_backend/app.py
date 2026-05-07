@@ -78,10 +78,16 @@ app = Flask(__name__)
 app.json = NumpyJSONProvider(app)
 CORS(app)  # allow Vite dev server on a different port
 
-UPLOAD_DIR  = HERE / "uploads"
-OUTPUT_DIR  = HERE / "outputs"
-UPLOAD_DIR.mkdir(exist_ok=True)
-OUTPUT_DIR.mkdir(exist_ok=True)
+try:
+    UPLOAD_DIR = HERE / "uploads"
+    OUTPUT_DIR = HERE / "outputs"
+    UPLOAD_DIR.mkdir(exist_ok=True)
+    OUTPUT_DIR.mkdir(exist_ok=True)
+except PermissionError:
+    UPLOAD_DIR = Path("/tmp/vayu_uploads")
+    OUTPUT_DIR = Path("/tmp/vayu_outputs")
+    UPLOAD_DIR.mkdir(exist_ok=True)
+    OUTPUT_DIR.mkdir(exist_ok=True)
 app.config["MAX_CONTENT_LENGTH"] = 32 * 1024 * 1024  # 32 MB max upload
 
 ALLOWED_IMG = {".jpg", ".jpeg", ".png"}
